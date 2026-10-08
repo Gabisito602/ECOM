@@ -17,7 +17,7 @@ export const site = {
     "Serigrafía y personalización de vasos, botellas, envases y packaging para empresas. Convertimos tus productos en soportes de tu marca.",
 
   /** Dominio de producción, sin barra final. PENDIENTE: confirmar dominio real. */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.newgraf.es",
+  url: (typeof process !== "undefined" ? process.env?.NEXT_PUBLIC_SITE_URL : undefined) ?? "https://www.newgraf.es",
 
   locale: "es_ES",
 

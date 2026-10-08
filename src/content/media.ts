@@ -21,7 +21,7 @@ export type VideoAsset = {
   alt: string;
 };
 
-const USE_LOCAL_VIDEO = process.env.NEXT_PUBLIC_LOCAL_MEDIA === "1";
+const USE_LOCAL_VIDEO = typeof process !== "undefined" && process.env?.NEXT_PUBLIC_LOCAL_MEDIA === "1";
 
 const HF = "https://d8j0ntlcm91z4.cloudfront.net/user_3I2s6cIxgsgvd1l0EiSOfN6pYiS";
 
