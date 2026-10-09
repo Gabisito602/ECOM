@@ -68,7 +68,7 @@ function Gallery({ c }: { c: Category }) {
           <Image src={images.cups.src} alt={images.cups.alt} fill sizes="(min-width:768px) 58vw, 100vw" className="object-cover" />
         </Reveal>
         <Reveal delay={0.1} className={`${tile} aspect-[3/2] md:col-span-5 md:aspect-auto`}>
-          <Video asset={videos.product} className="absolute inset-0 h-full w-full object-cover" />
+          <Video asset={videos.cupsReal} className="absolute inset-0 h-full w-full object-cover" />
         </Reveal>
       </>
     );
@@ -79,7 +79,7 @@ function Gallery({ c }: { c: Category }) {
           <Image src={images.bottles.src} alt={images.bottles.alt} fill sizes="(min-width:768px) 58vw, 100vw" className="object-cover" />
         </Reveal>
         <Reveal delay={0.1} className={`${tile} aspect-[3/2] md:col-span-5 md:aspect-auto`}>
-          <Video asset={videos.bottle} className="absolute inset-0 h-full w-full object-cover" />
+          <Video asset={videos.bottlesReal} className="absolute inset-0 h-full w-full object-cover" />
         </Reveal>
       </>
     );

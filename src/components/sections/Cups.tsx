@@ -16,6 +16,7 @@ const filters: ("Todos" | Tag)[] = ["Todos", "Color", "Transparentes", "Corporat
 type Item =
   | { id: string; type: "photo"; tags: Tag[]; title: string; span: string }
   | { id: string; type: "video"; tags: Tag[]; title: string; span: string }
+  | { id: string; type: "photo2"; tags: Tag[]; title: string; span: string }
   | {
       id: string;
       type: "art";
@@ -33,9 +34,9 @@ type Item =
 
 const items: Item[] = [
   { id: "foto-amarillos", type: "photo", tags: ["Color", "Gimnasios"], title: "Vasos de color para marcas fitness", span: "col-span-2 row-span-2" },
-  { id: "transparente", type: "art", tags: ["Transparentes", "Eventos"], title: "Vaso transparente", kind: "vaso", color: "#cfe3ea", ink: "#ffffff", art: "onda", clear: true, bg: "bg-[radial-gradient(ellipse_at_50%_30%,#2b3a44,#0e1316)]", span: "" },
+  { id: "transparente", type: "photo2", tags: ["Transparentes", "Eventos", "Restauración"], title: "Vasos transparentes", span: "row-span-2" },
   { id: "corporativo", type: "art", tags: ["Corporativos"], title: "Vaso corporativo", kind: "vaso", color: "#141518", ink: "#ffffff", art: "monograma", bg: "bg-[radial-gradient(ellipse_at_50%_30%,#ecebe7,#cfccc4)]", span: "" },
-  { id: "video-giro", type: "video", tags: ["Color", "Promocionales"], title: "Vaso personalizado en giro", span: "col-span-2" },
+  { id: "video-giro", type: "video", tags: ["Color", "Gimnasios", "Promocionales"], title: "Vasos para marcas fitness", span: "col-span-2" },
   { id: "eventos", type: "art", tags: ["Eventos", "Color"], title: "Vaso para eventos", kind: "vaso", color: "#e8492f", ink: "#ffffff", art: "onda", finish: "brillo", bg: "bg-[radial-gradient(ellipse_at_50%_30%,#3b1712,#130908)]", span: "" },
   { id: "restaurante", type: "art", tags: ["Restauración"], title: "Vaso para restauración", kind: "vaso", color: "#f7f5f0", ink: "#1e3a2b", art: "hoja", bg: "bg-[radial-gradient(ellipse_at_50%_30%,#e7efe8,#c5d2c8)]", span: "" },
   { id: "gimnasio", type: "art", tags: ["Gimnasios"], title: "Vaso tipo shaker para gimnasios", kind: "shaker", color: "#111214", ink: "#f5c400", art: "rayo", finish: "brillo", bg: "bg-[radial-gradient(ellipse_at_50%_30%,#2a2a1c,#0d0d0a)]", span: "" },
@@ -117,7 +118,7 @@ export function Cups() {
           ))}
         </div>
 
-        <motion.ul layout className="mt-8 grid auto-rows-[18rem] grid-cols-2 gap-3 md:auto-rows-[20rem] md:grid-cols-4 md:gap-4">
+        <motion.ul layout className="mt-8 grid grid-flow-dense auto-rows-[18rem] grid-cols-2 gap-3 md:auto-rows-[20rem] md:grid-cols-4 md:gap-4">
           <AnimatePresence mode="popLayout">
             {visible.map((it) => (
               <motion.li
@@ -138,7 +139,16 @@ export function Cups() {
                     className="object-cover object-[62%_50%] transition-transform duration-[1400ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-105"
                   />
                 )}
-                {it.type === "video" && <Video asset={videos.product} className="absolute inset-0 h-full w-full object-cover" />}
+                {it.type === "photo2" && (
+                  <Image
+                    src={images.clearCups.src}
+                    alt={images.clearCups.alt}
+                    fill
+                    sizes="(min-width: 768px) 25vw, 50vw"
+                    className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-105"
+                  />
+                )}
+                {it.type === "video" && <Video asset={videos.cupsReal} className="absolute inset-0 h-full w-full object-cover" />}
                 {it.type === "art" && <ArtTile it={it} />}
 
                 {/* Ficha que aparece al pasar el cursor (siempre visible en táctil) */}

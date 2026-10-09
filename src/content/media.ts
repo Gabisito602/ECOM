@@ -56,6 +56,21 @@ export const videos = {
     local: "/media/higgsfield/v05-industrial.mp4",
     alt: "Planos macro de maquinaria, tinta y pantallas de serigrafía.",
   },
+  /** Animados en Higgsfield a partir de las fotos reales de Newgraf (09/10/2026). */
+  cupsReal: {
+    id: "v06-vasos-reales",
+    remote: `${HF}/hf_20261009_094749_459ecfc6-a291-42fb-b33b-e06db867408d.mp4`,
+    local: "/media/higgsfield/v06-vasos-reales.mp4",
+    poster: "/media/vasos-shaker.jpg",
+    alt: "Vasos amarillos serigrafiados con logotipos de marcas fitness.",
+  },
+  bottlesReal: {
+    id: "v07-botellas-reales",
+    remote: `${HF}/hf_20261009_094749_12ab4773-f1a3-4fa0-9c5b-56a1fff02b5e.mp4`,
+    local: "/media/higgsfield/v07-botellas-reales.mp4",
+    poster: "/media/botellas-rey-leon.jpg",
+    alt: "Botellas roja, amarilla y azul serigrafiadas en blanco.",
+  },
   /** Grabaciones reales de producción aportadas por Newgraf. */
   /** Grabación real: serigrafía de vasos en máquina (Newgraf). */
   productionCups: {
@@ -98,6 +113,12 @@ export const images = {
     width: 1536,
     height: 1024,
     alt: "Dos vasos amarillos serigrafiados en negro con logotipos de marca.",
+  },
+  clearCups: {
+    src: `${HF}/hf_20261009_094458_d17c8896-0006-4a6f-b514-ed704e4ecda4.png`,
+    width: 1024,
+    height: 1280,
+    alt: "Vasos transparentes serigrafiados en blanco.",
   },
   productionA: {
     src: "/media/produccion-cajas-a.jpg",

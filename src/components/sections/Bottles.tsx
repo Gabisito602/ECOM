@@ -100,8 +100,8 @@ export function Bottles() {
           <Image src={images.bottles.src} alt={images.bottles.alt} fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
         </Reveal>
         <Reveal delay={0.1} className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-graphite md:col-span-5 md:aspect-auto">
-          <Video asset={videos.bottle} className="absolute inset-0 h-full w-full object-cover" />
-          <p className="eyebrow absolute bottom-5 left-5 text-white/80">Macro · Acabado de la tinta</p>
+          <Video asset={videos.bottlesReal} className="absolute inset-0 h-full w-full object-cover" />
+          <p className="eyebrow absolute bottom-5 left-5 text-white/80">Proyecto real · Botellas serigrafiadas</p>
         </Reveal>
       </div>
     </section>
