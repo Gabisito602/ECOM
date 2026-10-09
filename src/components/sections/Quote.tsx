@@ -2,7 +2,7 @@ import { QuoteWizard } from "@/components/quote/QuoteWizard";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Reveal } from "@/components/ui/Reveal";
 
-export function Quote({ defaultProduct, index = "10" }: { defaultProduct?: string; index?: string }) {
+export function Quote({ defaultProduct, index = "11" }: { defaultProduct?: string; index?: string }) {
   return (
     <section id="propuesta" className="bg-paper pb-24 md:pb-36" aria-labelledby="propuesta-title">
       <div className="wrap grid gap-10 border-t border-ink/10 pt-24 md:pt-32 lg:grid-cols-12">

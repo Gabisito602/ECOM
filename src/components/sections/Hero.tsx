@@ -6,6 +6,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { Video } from "@/components/ui/Video";
 import { Arrow } from "@/components/ui/Arrow";
 import { videos } from "@/content/media";
+import { site } from "@/content/site";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -52,7 +53,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.1 }}
         >
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-red" aria-hidden />
-          Serigrafía y personalización para empresas
+          {site.yearsExperience} años · Serigrafía y personalización para empresas
         </motion.p>
 
         <h1 id="hero-title" className="display-xl max-w-[12ch]">

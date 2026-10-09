@@ -14,12 +14,23 @@ export const site = {
   tagline: "Serigrafía y personalización para empresas",
   claim: "Tu producto. Tu marca. Nuestra serigrafía.",
   description:
-    "Serigrafía y personalización de vasos, botellas, envases y packaging para empresas. Convertimos tus productos en soportes de tu marca.",
+    "20 años de serigrafía y personalización de vasos, botellas, envases y packaging para empresas. Convertimos tus productos en soportes de tu marca.",
 
   /** Dominio de producción, sin barra final. PENDIENTE: confirmar dominio real. */
   url: (typeof process !== "undefined" ? process.env?.NEXT_PUBLIC_SITE_URL : undefined) ?? "https://www.newgraf.es",
 
   locale: "es_ES",
+
+  /** Confirmado por Newgraf (09/10/2026). */
+  yearsExperience: 20,
+
+  /**
+   * Hitos de la historia. PENDIENTE: año de fundación exacto y momentos clave
+   * (primera máquina, nave actual, nuevos soportes, grandes proyectos…).
+   * Vacío = la sección Historia no muestra la línea de tiempo.
+   * Ejemplo: { year: "2006", title: "Nace Newgraf", text: "…" }
+   */
+  history: [] as { year: string; title: string; text: string }[],
 
   contact: {
     /** PENDIENTE — formato internacional, p. ej. "+34 600 000 000" */

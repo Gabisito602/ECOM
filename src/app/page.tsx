@@ -8,6 +8,7 @@ import { Industrial } from "@/components/sections/Industrial";
 import { UseCases } from "@/components/sections/UseCases";
 import { Process } from "@/components/sections/Process";
 import { Configurator } from "@/components/configurator/Configurator";
+import { History } from "@/components/sections/History";
 import { Trust } from "@/components/sections/Trust";
 import { Quote } from "@/components/sections/Quote";
 import { FinalCta } from "@/components/sections/FinalCta";
@@ -25,6 +26,7 @@ export default function Home() {
       <UseCases />
       <Process />
       <Configurator />
+      <History />
       <Trust />
       <Quote />
       <FinalCta />

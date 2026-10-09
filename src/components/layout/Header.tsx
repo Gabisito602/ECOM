@@ -11,7 +11,7 @@ const nav = [
   { href: "/#configurador", label: "Configurador" },
   { href: "/#proceso", label: "Proceso" },
   { href: "/#sectores", label: "Sectores" },
-  { href: "/#empresa", label: "Empresa" },
+  { href: "/#historia", label: "Historia" },
 ];
 
 export function Header() {

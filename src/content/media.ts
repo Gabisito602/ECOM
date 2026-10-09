@@ -57,6 +57,14 @@ export const videos = {
     alt: "Planos macro de maquinaria, tinta y pantallas de serigrafía.",
   },
   /** Grabaciones reales de producción aportadas por Newgraf. */
+  /** Grabación real: serigrafía de vasos en máquina (Newgraf). */
+  productionCups: {
+    id: "produccion-vasos",
+    remote: null,
+    local: "/media/produccion-vasos.mp4",
+    poster: "/media/produccion-vasos.jpg",
+    alt: "Máquina de serigrafía imprimiendo vasos en el taller de Newgraf.",
+  },
   productionA: {
     id: "produccion-a",
     remote: null,

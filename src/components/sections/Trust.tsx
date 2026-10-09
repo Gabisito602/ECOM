@@ -16,7 +16,7 @@ export function Trust() {
       <div className="wrap">
         <div className="grid gap-10 md:grid-cols-12">
           <Reveal className="md:col-span-7">
-            <SectionLabel index="09">Empresa</SectionLabel>
+            <SectionLabel index="10">Empresa</SectionLabel>
             <h2 id="empresa-title" className="display-lg mt-6">
               Experiencia industrial.
               <span className="block text-muted/70">Mentalidad de marca.</span>
@@ -24,8 +24,8 @@ export function Trust() {
           </Reveal>
           <Reveal className="md:col-span-5 md:pt-14" delay={0.1}>
             <p className="lede text-muted">
-              Newgraf combina producción de serigrafía con una forma de trabajar pensada para marcas: entender qué quieres
-              comunicar y llevarlo con precisión al producto.
+              {site.yearsExperience} años de producción en serigrafía y una forma de trabajar pensada para marcas: entender qué
+              quieres comunicar y llevarlo con precisión al producto.
             </p>
           </Reveal>
         </div>
