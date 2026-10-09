@@ -6,16 +6,16 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Video } from "@/components/ui/Video";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { images, videos } from "@/content/media";
+import { images, videos, type VideoAsset } from "@/content/media";
 
 type Tag = "Color" | "Transparentes" | "Eventos" | "Restauración" | "Gimnasios" | "Promocionales";
 
-type Item = { id: string; type: "photo" | "photo2" | "video"; tags: Tag[]; title: string; span: string };
+type Item = { id: string; type: "photo2" | "video"; tags: Tag[]; title: string; span: string; video?: VideoAsset };
 
 const items: Item[] = [
-  { id: "foto-amarillos", type: "photo", tags: ["Color", "Gimnasios"], title: "Vasos de color para marcas fitness", span: "col-span-2 row-span-2" },
+  { id: "vasos-fitness", type: "video", video: videos.cupsReal, tags: ["Color", "Gimnasios"], title: "Vasos de color para marcas fitness", span: "col-span-2 row-span-2" },
   { id: "transparente", type: "photo2", tags: ["Transparentes", "Eventos", "Restauración"], title: "Vasos transparentes", span: "row-span-2" },
-  { id: "video-giro", type: "video", tags: ["Color", "Gimnasios", "Promocionales"], title: "Vasos para marcas fitness", span: "row-span-2" },
+  { id: "vaso-amarillo", type: "video", video: videos.yellowCup, tags: ["Color", "Promocionales"], title: "Vaso personalizado", span: "row-span-2" },
 ];
 
 // Solo se muestran los filtros que tienen al menos un trabajo.
@@ -82,15 +82,6 @@ export function Cups() {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className={`group relative overflow-hidden rounded-[22px] bg-graphite ${it.span}`}
               >
-                {it.type === "photo" && (
-                  <Image
-                    src={images.cups.src}
-                    alt={images.cups.alt}
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover object-[62%_50%] transition-transform duration-[1400ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-105"
-                  />
-                )}
                 {it.type === "photo2" && (
                   <Image
                     src={images.clearCups.src}
@@ -100,7 +91,7 @@ export function Cups() {
                     className="object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-105"
                   />
                 )}
-                {it.type === "video" && <Video asset={videos.cupsReal} className="absolute inset-0 h-full w-full object-cover" />}
+                {it.type === "video" && it.video && <Video asset={it.video} className="absolute inset-0 h-full w-full object-cover" />}
 
                 {/* Ficha que aparece al pasar el cursor (siempre visible en táctil) */}
                 <div className="pointer-events-none absolute inset-x-3 bottom-3 translate-y-2 rounded-2xl bg-ink/55 p-4 opacity-0 backdrop-blur-xl transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 max-md:translate-y-0 max-md:opacity-100 max-md:p-3">

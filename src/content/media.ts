@@ -80,6 +80,21 @@ export const videos = {
     poster: "/media/botellas-rey-leon.jpg",
     alt: "Botellas roja, amarilla y azul serigrafiadas en blanco.",
   },
+  /** Higgsfield v02 y v04, optimizados (720p) y servidos desde /public. */
+  yellowCup: {
+    id: "v02-vaso-amarillo",
+    remote: null,
+    local: "/media/vaso-amarillo-giro.mp4",
+    poster: "/media/vaso-amarillo-giro.jpg",
+    alt: "Vaso amarillo personalizado girando sobre un pedestal.",
+  },
+  blueBottle: {
+    id: "v04-botella-azul",
+    remote: null,
+    local: "/media/botella-azul-macro.mp4",
+    poster: "/media/botella-azul-macro.jpg",
+    alt: "Macro del acabado de tinta blanca sobre una botella azul.",
+  },
   /** Grabaciones reales de producción aportadas por Newgraf. */
   /** Grabación real: serigrafía de vasos en máquina (Newgraf). */
   productionCups: {
