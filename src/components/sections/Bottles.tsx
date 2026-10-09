@@ -4,9 +4,8 @@ import Image from "next/image";
 import { useRef } from "react";
 import { ProductArt } from "@/components/product/ProductArt";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Video } from "@/components/ui/Video";
 import { Reveal } from "@/components/ui/Reveal";
-import { images, videos } from "@/content/media";
+import { images } from "@/content/media";
 import { range } from "@/lib/color";
 import { useSectionProgress } from "@/lib/useSectionProgress";
 
@@ -94,14 +93,12 @@ export function Bottles() {
         </div>
       </div>
 
-      {/* Material real + macro */}
-      <div className="wrap grid gap-4 pb-24 md:grid-cols-12 md:gap-5 md:pb-36">
-        <Reveal className="relative aspect-[3/2] overflow-hidden rounded-[28px] md:col-span-7">
-          <Image src={images.bottles.src} alt={images.bottles.alt} fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
-        </Reveal>
-        <Reveal delay={0.1} className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-graphite md:col-span-5 md:aspect-auto">
-          <Video asset={videos.bottlesReal} className="absolute inset-0 h-full w-full object-cover" />
-          <p className="eyebrow absolute bottom-5 left-5 text-white/80">Proyecto real · Botellas serigrafiadas</p>
+      {/* Proyecto real */}
+      <div className="wrap pb-24 md:pb-36">
+        <Reveal className="relative aspect-[3/2] overflow-hidden rounded-[28px] md:aspect-[21/10]">
+          <Image src={images.bottles.src} alt={images.bottles.alt} fill sizes="100vw" className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent" aria-hidden />
+          <p className="eyebrow absolute bottom-5 left-5 text-white/90 md:bottom-8 md:left-8">Proyecto real · Botellas serigrafiadas</p>
         </Reveal>
       </div>
     </section>
