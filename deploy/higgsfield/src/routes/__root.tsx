@@ -53,7 +53,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: meta.favicon_url ?? "/icon.svg", type: "image/svg+xml" },
-      { rel: "preconnect", href: "https://d8j0ntlcm91z4.cloudfront.net" },
+      { rel: "preconnect", href: "https://d2ol7oe51mr4n9.cloudfront.net" },
     ],
   }),
   shellComponent: RootShell,

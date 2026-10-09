@@ -15,6 +15,8 @@ export type VideoAsset = {
   id: string;
   /** URL generada en Higgsfield (CDN). `null` = aún no generado. */
   remote: string | null;
+  /** Versión ligera para pantallas ≤ 768 px (opcional). */
+  mobile?: string;
   /** Ruta servida desde /public tras `npm run media:fetch`. */
   local: string;
   poster?: string;
@@ -24,13 +26,18 @@ export type VideoAsset = {
 const USE_LOCAL_VIDEO = typeof process !== "undefined" && process.env?.NEXT_PUBLIC_LOCAL_MEDIA === "1";
 
 const HF = "https://d8j0ntlcm91z4.cloudfront.net/user_3I2s6cIxgsgvd1l0EiSOfN6pYiS";
+/** Versiones optimizadas para web (720p, ~1–2 MB) subidas al CDN de Higgsfield el 09/10/2026. */
+const CDN = "https://d2ol7oe51mr4n9.cloudfront.net/user_3I2s6cIxgsgvd1l0EiSOfN6pYiS";
 
 export const videos = {
   hero: {
     id: "v01-hero",
-    remote: `${HF}/hf_20261008_203424_6d2472c9-d0a8-4dbf-949b-8b3740345f9f.mp4`,
+    // Montaje: vídeo Higgsfield (v01) intercalado con producción real de vasos y cajas.
+    remote: `${CDN}/474cb941-2976-4b16-94d1-8b4566cd0cbc.mp4`,
+    mobile: `${CDN}/17a09d25-1dc1-4712-89ff-1bdaa233c08a.mp4`,
     local: "/media/higgsfield/v01-hero.mp4",
-    alt: "Proceso de serigrafía: tinta, pantalla, rasqueta e impresión de un logotipo sobre un vaso.",
+    poster: `${CDN}/9b23075f-6c37-4630-9c35-ba377a3e22b6.jpg`,
+    alt: "Proceso de serigrafía: tinta, pantalla, rasqueta, producción real de vasos y cajas, y vasos terminados.",
   },
   product: {
     id: "v02-product",
@@ -40,7 +47,8 @@ export const videos = {
   },
   packaging: {
     id: "v03-packaging",
-    remote: `${HF}/hf_20261008_203424_f4d0e3bd-2eab-40a1-9ee0-a51437cdc440.mp4`,
+    remote: `${CDN}/8cfc4a18-7fd4-403d-87ab-df18858049b7.mp4`,
+    poster: `${CDN}/c7d556de-c639-46d9-b55e-959b03dfc6f5.jpg`,
     local: "/media/higgsfield/v03-packaging.mp4",
     alt: "Caja neutra que pasa a estar impresa con una marca.",
   },
@@ -52,21 +60,22 @@ export const videos = {
   },
   industrial: {
     id: "v05-industrial",
-    remote: `${HF}/hf_20261008_203424_2e98582f-07b3-48d6-80b3-f13dfc657649.mp4`,
+    remote: `${CDN}/7560a11e-1642-4d2d-aa34-c6ba063127ee.mp4`,
+    poster: `${CDN}/cd48910f-d075-47e4-942d-f0b70ca2936c.jpg`,
     local: "/media/higgsfield/v05-industrial.mp4",
     alt: "Planos macro de maquinaria, tinta y pantallas de serigrafía.",
   },
   /** Animados en Higgsfield a partir de las fotos reales de Newgraf (09/10/2026). */
   cupsReal: {
     id: "v06-vasos-reales",
-    remote: `${HF}/hf_20261009_094749_459ecfc6-a291-42fb-b33b-e06db867408d.mp4`,
+    remote: `${CDN}/57526eec-1d11-4a46-8d10-90b884cccf00.mp4`,
     local: "/media/higgsfield/v06-vasos-reales.mp4",
     poster: "/media/vasos-shaker.jpg",
     alt: "Vasos amarillos serigrafiados con logotipos de marcas fitness.",
   },
   bottlesReal: {
     id: "v07-botellas-reales",
-    remote: `${HF}/hf_20261009_094749_12ab4773-f1a3-4fa0-9c5b-56a1fff02b5e.mp4`,
+    remote: `${CDN}/1d058a31-bc00-4b23-afcc-d597d01277d6.mp4`,
     local: "/media/higgsfield/v07-botellas-reales.mp4",
     poster: "/media/botellas-rey-leon.jpg",
     alt: "Botellas roja, amarilla y azul serigrafiadas en blanco.",
@@ -96,9 +105,9 @@ export const videos = {
   },
 } satisfies Record<string, VideoAsset>;
 
-export function videoSrc(v: VideoAsset) {
+export function videoSrc(v: VideoAsset, small = false) {
   if (!v.remote || USE_LOCAL_VIDEO) return v.local;
-  return v.remote;
+  return small && v.mobile ? v.mobile : v.remote;
 }
 
 export const images = {
@@ -115,9 +124,9 @@ export const images = {
     alt: "Dos vasos amarillos serigrafiados en negro con logotipos de marca.",
   },
   clearCups: {
-    src: `${HF}/hf_20261009_094458_d17c8896-0006-4a6f-b514-ed704e4ecda4.png`,
-    width: 1024,
-    height: 1280,
+    src: `${CDN}/f103367c-bbce-4b07-aee9-f099809c3b08.webp`,
+    width: 900,
+    height: 1125,
     alt: "Vasos transparentes serigrafiados en blanco.",
   },
   productionA: {

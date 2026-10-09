@@ -103,16 +103,10 @@ export function Packaging() {
           <Video asset={videos.productionA} className="absolute inset-0 h-full w-full object-cover" />
           <p className="eyebrow absolute bottom-5 left-5 text-white/85">En producción</p>
         </Reveal>
-        <div className="grid gap-4 md:col-span-8 md:gap-5">
-          <Reveal delay={0.08} className="relative aspect-video overflow-hidden rounded-[28px] bg-ink">
-            <Video asset={videos.packaging} className="absolute inset-0 h-full w-full object-cover" />
-            <p className="eyebrow absolute bottom-5 left-5 text-white/85">De caja neutra a caja de marca</p>
-          </Reveal>
-          <Reveal delay={0.16} className="relative aspect-video overflow-hidden rounded-[28px] bg-ink">
-            <Video asset={videos.productionB} className="absolute inset-0 h-full w-full object-cover" />
-            <p className="eyebrow absolute bottom-5 left-5 text-white/85">Troqueles impresos</p>
-          </Reveal>
-        </div>
+        <Reveal delay={0.08} className="relative aspect-video overflow-hidden rounded-[28px] bg-ink md:col-span-8 md:aspect-auto md:min-h-[34rem]">
+          <Video asset={videos.packaging} className="absolute inset-0 h-full w-full object-cover" />
+          <p className="eyebrow absolute bottom-5 left-5 text-white/85">De caja neutra a caja de marca</p>
+        </Reveal>
       </div>
     </section>
   );
