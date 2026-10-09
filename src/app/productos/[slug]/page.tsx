@@ -94,6 +94,18 @@ function Gallery({ c }: { c: Category }) {
         </Reveal>
       </>
     );
+  const photo = c.slug === "envases" ? images.containers : c.slug === "merchandising" ? images.merch : null;
+  if (photo)
+    return (
+      <>
+        <Reveal className={`${tile} aspect-[4/3] md:col-span-7`}>
+          <Image src={photo.src} alt={photo.alt} fill sizes="(min-width:768px) 58vw, 100vw" className="object-cover" />
+        </Reveal>
+        <Reveal delay={0.1} className={`${tile} aspect-[4/3] md:col-span-5 md:aspect-auto`}>
+          <Video asset={videos.industrial} className="absolute inset-0 h-full w-full object-cover" />
+        </Reveal>
+      </>
+    );
   return (
     <Reveal className={`${tile} aspect-video md:col-span-12 md:aspect-[21/9]`}>
       <Video asset={videos.industrial} className="absolute inset-0 h-full w-full object-cover" />

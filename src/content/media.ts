@@ -144,6 +144,19 @@ export const images = {
     height: 1125,
     alt: "Vasos transparentes serigrafiados en blanco.",
   },
+  /** Generadas con Higgsfield (09/10/2026). */
+  containers: {
+    src: `${CDN}/25a19a1e-b02c-4862-a324-c675f27f9475.webp`,
+    width: 1400,
+    height: 1055,
+    alt: "Envases de champú y gel serigrafiados directamente sobre la botella.",
+  },
+  merch: {
+    src: `${CDN}/87016122-75ca-4449-a60c-229ffa75ea23.webp`,
+    width: 1400,
+    height: 1055,
+    alt: "Mochila negra y bolsa de algodón serigrafiadas con un logotipo blanco.",
+  },
   productionA: {
     src: "/media/produccion-cajas-a.jpg",
     width: 464,

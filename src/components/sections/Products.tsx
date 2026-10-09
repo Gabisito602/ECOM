@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { categories, type Category } from "@/content/products";
 import { images, videos } from "@/content/media";
-import { ProductArt } from "@/components/product/ProductArt";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { Video } from "@/components/ui/Video";
 import { Reveal } from "@/components/ui/Reveal";
@@ -46,18 +45,23 @@ function Media({ c }: { c: Category }) {
       return <Video asset={videos.productionB} className={`absolute inset-0 h-full w-full object-cover ${zoom}`} />;
     case "envases":
       return (
-        <div className={`absolute inset-0 flex items-end justify-center gap-[4%] bg-[radial-gradient(ellipse_at_50%_40%,#f6f4ef,#d7d3ca)] px-[10%] pb-[16%] ${zoom}`}>
-          <ProductArt kind="envase" color="#ffffff" ink="#0b0b0c" artwork={{ type: "preset", id: "hoja" }} className="h-[42%] w-auto" title="Envase blanco personalizado" />
-          <ProductArt kind="envase" color="#1b1c1f" ink="#ffffff" artwork={{ type: "preset", id: "hoja" }} className="h-[56%] w-auto" title="Envase negro personalizado" />
-          <ProductArt kind="envase" color="#d7192a" ink="#ffffff" artwork={{ type: "preset", id: "hoja" }} finish="brillo" className="h-[34%] w-auto" title="Envase rojo personalizado" />
-        </div>
+        <Image
+          src={images.containers.src}
+          alt={images.containers.alt}
+          fill
+          sizes="(min-width: 768px) 50vw, 88vw"
+          className={`object-cover object-[50%_30%] ${zoom}`}
+        />
       );
     case "merchandising":
       return (
-        <div className={`absolute inset-0 flex items-end justify-center gap-[3%] bg-[radial-gradient(ellipse_at_50%_35%,#2a2c31,#121316)] px-[10%] pb-[14%] ${zoom}`}>
-          <ProductArt kind="bolsa" color="#d8c9a8" ink="#0b0b0c" artwork={{ type: "preset", id: "rayo" }} className="h-[60%] w-auto" title="Bolsa personalizada" />
-          <ProductArt kind="bolsa" color="#0b0b0c" ink="#ffffff" artwork={{ type: "preset", id: "rayo" }} className="h-[48%] w-auto" title="Bolsa negra personalizada" />
-        </div>
+        <Image
+          src={images.merch.src}
+          alt={images.merch.alt}
+          fill
+          sizes="(min-width: 768px) 50vw, 88vw"
+          className={`object-cover object-[50%_30%] ${zoom}`}
+        />
       );
   }
 }
